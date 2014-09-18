@@ -7,7 +7,7 @@ package mergo
 
 import (
 	"io/ioutil"
-	"launchpad.net/goyaml"
+	"gopkg.in/koofr/yaml.v1"
 	"reflect"
 	"testing"
 )
@@ -175,6 +175,6 @@ func TestYAMLMaps(t *testing.T) {
 func loadYAML(path string) (m map[string]interface{}) {
 	m = make(map[string]interface{})
 	raw, _ := ioutil.ReadFile(path)
-	_ = goyaml.Unmarshal(raw, &m)
+	_ = yaml.Unmarshal(raw, &m)
 	return
 }
